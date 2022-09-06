@@ -1,0 +1,25 @@
+
+<h2 class="text-center text-info">{{title}}</h2>
+<div class="row">
+    <table class="table">
+        <thead>
+           <tr>
+            <th> Id </th>
+            <th> Title </th>
+            <th> Price </th>
+            <th> Quantity Available </th>
+            <th></th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of carts">
+                 <td>{{c.Product.Title| uppercase}}</td>
+                 <td>{{c.TotalPrice| currency}}</td>
+                 <td>{{c.OrderQuantity}}</td>
+                 <td><button 
+                    (click)="removeFromCart(c)" class="btn btn-info"> Remove from  Cart</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

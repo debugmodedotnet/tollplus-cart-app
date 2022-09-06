@@ -1,0 +1,24 @@
+
+<div class="row">
+    <table class="table">
+        <thead>
+           <tr>
+            <th> Id </th>
+            <th> Title </th>
+            <th> Price </th>
+            <th> Quantity Available </th>
+            <th></th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products">
+                 <td>{{p.Id}}</td>
+                 <td [style.color]="p.Color">{{p.Title | uppercase}}</td>
+                 <td>{{p.Price | currency}}</td>
+                 <td>{{p.inStockQuantity}}</td>
+                 <td><button [disabled]="p.inStockQuantity < 30 " class="btn btn-danger" (click)="addToCart(p)"> Add to Cart</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
